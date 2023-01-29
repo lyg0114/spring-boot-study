@@ -1,7 +1,11 @@
 package yglee.springbootstudy;
+import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
+import org.springframework.boot.web.server.WebServer;
 
 public class SpringBootStudyApplication {
   public static void main(String[] args) {
-    System.out.println("Hello containerless SpringBootStudyApplication");
+    TomcatServletWebServerFactory serverFactory = new TomcatServletWebServerFactory();
+    WebServer webServer = serverFactory.getWebServer();
+    webServer.start();
   }
 }
